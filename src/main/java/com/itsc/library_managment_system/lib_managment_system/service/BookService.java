@@ -15,19 +15,31 @@ public class BookService {
   @Autowired
   private BookRepository bookRepository;
 
-  public List<Book> findAll() {
+  public List<Book> getAllBooks() {
     return bookRepository.findAll();
   }
 
-  public Optional<Book> findById(Long id) {
-    return bookRepository.findById(id);
+  public Book getBookById(Long id) {
+    Optional<Book> optionalBook = bookRepository.findById(id);
+    return optionalBook.orElse(null);
   }
 
-  public Book save(Book book) {
+  public Book saveBook(Book book) {
     return bookRepository.save(book);
   }
 
-  public void deleteById(Long id) {
+  public Book updateBook(Long id, Book bookDetails) {
+    Book book = getBookById(id);
+    if (book != null) {
+      book.setTitle(bookDetails.getTitle());
+      book.setAuthor(bookDetails.getAuthor());
+      book.setIsbn(bookDetails.getIsbn());
+      return bookRepository.save(book);
+    }
+    return null;
+  }
+
+  public void deleteBook(Long id) {
     bookRepository.deleteById(id);
   }
 }

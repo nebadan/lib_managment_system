@@ -1,20 +1,12 @@
 package com.itsc.library_managment_system.lib_managment_system.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+
 
 import com.itsc.library_managment_system.lib_managment_system.model.Book;
 import com.itsc.library_managment_system.lib_managment_system.service.BookService;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -25,33 +17,28 @@ public class BookController {
   @Autowired
   private BookService bookService;
 
-  public BookController(BookService bookService) {
-    this.bookService = bookService;
-  }
-
   @GetMapping
   public List<Book> getAllBooks() {
-    return bookService.findAll();
+    return bookService.getAllBooks();
   }
 
   @GetMapping("/{id}")
-  public Optional<Book> getBookById(@PathVariable Long id) {
-    return bookService.findById(id);
+  public Book getBookById(@PathVariable Long id) {
+    return bookService.getBookById(id);
   }
 
   @PostMapping
-  public Book addBook(@RequestBody Book book) {
-    return bookService.save(book);
+  public Book createBook(@RequestBody Book book) {
+    return bookService.saveBook(book);
   }
 
   @PutMapping("/{id}")
-  public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
-    book.setId(id);
-    return bookService.save(book);
+  public Book updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
+    return bookService.updateBook(id, bookDetails);
   }
 
   @DeleteMapping("/{id}")
   public void deleteBook(@PathVariable Long id) {
-    bookService.deleteById(id);
+    bookService.deleteBook(id);
   }
 }
