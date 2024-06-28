@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#book-list {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+form {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

@@ -1,27 +1,19 @@
 package com.itsc.library_managment_system.lib_managment_system.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String title;
   private String author;
   private String isbn;
 
-  // create constructor
-  public Book(Long id, String title, String author, String isbn) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
-  }
-
-  // constructor without id
-  public Book(String title, String author, String isbn) {
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
-  }
-
-  // getter and setter
   public Long getId() {
     return id;
   }
