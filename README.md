@@ -7,7 +7,7 @@ All activities by users, like issuing or returning of books, are managed and tra
 The system also applies one of the best practices: Dependency Injection for service and repository classes.
 
 ## Features
-- **Add, Update, Delete, and View Book Records: ** Manage inventory of books with CRUD operations easily.
+- **Add, Update, Delete, and View Book Records:** Manage inventory of books with CRUD operations easily.
 - **Issue and Return Books:** Keep track of book transactions by issuing and returning books to users.
 - **Log User Activities:** Using AOP, log user activities regarding the issue/return of a book for auditing and tracking purposes.
 - **Dependency Injection (DI): ** It is used for service and repository classes to bring in better modularity and testability.
