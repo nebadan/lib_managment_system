@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Management System</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-<h1>Library Management System</h1>
-<div id="book-list"></div>
-<form id="book-form">
-    <input type="hidden" id="book-id">
-    <input type="text" id="title" placeholder="Title" required>
-    <input type="text" id="author" placeholder="Author" required>
-    <input type="text" id="isbn" placeholder="ISBN" required>
-    <button type="submit">Save</button>
-</form>
-<script src="/js/scripts.js"></script>
-</body>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Library Management System</h1>
+    <div class="top-section">
+      <form id="book-form">
+        <div class="input_container">
+          <input type="hidden" id="book-id" />
+        </div>
+        <div class="input_container">
+          TITLE
+          <input type="text" id="title" required />
+        </div>
+        <div class="input_container">
+          Author
+          <input type="text" id="author" required />
+        </div>
+        <div class="input_container">
+          ISBN
+          <input type="text" id="isbn" required />
+        </div>
+        <div class="input_container">
+          <button type="submit">Save</button>
+        </div>
+      </form>
+      <img src="./women_reading.png" alt="" />
+    </div>
+    <div id="book-list"></div>
+    <script src="/js/scripts.js"></script>
+  </body>
 </html>
