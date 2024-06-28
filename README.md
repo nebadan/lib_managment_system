@@ -1,4 +1,4 @@
-# Library Management System
+## Library Management System
 
 ## Description
 This Library Management System is designed to handle all the information of books and activities of the users associated with the library. 
